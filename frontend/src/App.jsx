@@ -8,6 +8,9 @@ function App() {
   const fetchCandidates = async () => {
   try {
     const res = await fetch("http://localhost:5000/api/candidates");
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
     const data = await res.json();
 
     // force array

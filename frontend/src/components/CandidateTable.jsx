@@ -18,6 +18,7 @@ export default function CandidateTable({ candidates = [], refresh }) {
       <thead>
         <tr>
           <th>Name</th>
+          <th>Age</th>
           <th>Email</th>
           <th>Status</th>
           <th>Action</th>
@@ -27,12 +28,13 @@ export default function CandidateTable({ candidates = [], refresh }) {
       <tbody>
         {candidates.length === 0 ? (
           <tr>
-            <td colSpan="4">No candidates found</td>
+            <td colSpan="5">No candidates found</td>
           </tr>
         ) : (
           candidates.map((c) => (
             <tr key={c.id}>
               <td>{c.name}</td>
+              <td>{c.age}</td>
               <td>{c.email}</td>
               <td>{c.status}</td>
               <td>
